@@ -25,7 +25,6 @@ with app.app_context():
     db.create_all()
 
 # api routes
-
 app = Flask(__name__)
 
 # inventory routes
@@ -73,7 +72,7 @@ def update_stock(item_id):
     db.session.commit()
     return jsonify({"message": "Stock updated!"}), 200
 
-# franchise/employee routes
+# branches/employee routes
 
 
 @app.route('/branches', methods=['GET'])
