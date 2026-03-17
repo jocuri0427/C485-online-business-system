@@ -1,11 +1,18 @@
-class Inventory:
+from database import db
 
-    def __init__(self, id, branch_id, product_name, quantity, price):
-        self.id = id
-        self.branch_id = branch_id
-        self.product_name = product_name
-        self.quantity = quantity
-        self.price = price
+class InventoryItem(db.Model):
+    __tablename__ = 'inventory_items'
+    item_id = db.Column(db.Integer, primary_key=True)
+    branch_id = db.Column(db.Integer, db.ForeignKey('branches.branch_id'), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    quantity = db.Column(db.Integer, default=0)
 
     def to_dict(self):
-        return self.__dict__
+        return {
+            "id": self.item_id,
+            "branch_id": self.branch_id,
+            "product_name": self.name,
+            "quantity": self.quantity,
+            "price": self.price
+        }
