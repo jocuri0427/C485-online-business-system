@@ -22,6 +22,12 @@ app.register_blueprint(employee_bp)
 
 # if tabbles DNE, create them
 with app.app_context():
+    # Import all models to ensure SQLAlchemy knows about them before create_all
+    import models.business
+    import models.branch
+    import models.employee
+    import models.inventory
+    
     db.create_all()
 
 if __name__ == "__main__":
