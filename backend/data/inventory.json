@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "branch_id": 1,
+        "product_name": "Laptop",
+        "quantity": 10,
+        "price": 1000
+    }
+]
