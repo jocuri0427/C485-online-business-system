@@ -4,6 +4,7 @@ from database import db
 from controllers.inventory_controller import inventory_bp
 from controllers.branch_controller import branch_bp
 from controllers.employee_controller import employee_bp
+from controllers.auth_controller import auth_bp
 
 app = Flask(__name__)
 CORS(app)
@@ -19,6 +20,7 @@ db.init_app(app)
 app.register_blueprint(inventory_bp)
 app.register_blueprint(branch_bp)
 app.register_blueprint(employee_bp)
+app.register_blueprint(auth_bp)
 
 # if tabbles DNE, create them
 with app.app_context():
@@ -27,6 +29,7 @@ with app.app_context():
     import models.branch
     import models.employee
     import models.inventory
+    import models.user
     
     db.create_all()
 
