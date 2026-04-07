@@ -1,26 +1,27 @@
-from storage.json_storage import read_data, write_data
-from models.inventory import Inventory
+from database import db
+from models.inventory import InventoryItem as Inventory
 
-FILE = "inventory.json"
 
 def get_all_inventory():
-    return read_data(FILE)
+    items = Inventory.query.all()
+    return [item.to_dict() for item in items]
+
 
 def add_inventory(data):
-    inventory = read_data(FILE)
-    new_id = len(inventory) + 1
     item = Inventory(
-        new_id,
-        data["branch_id"],
-        data["product_name"],
-        data["quantity"],
-        data["price"]
+        item_id=data.get("id"),
+        branch_id=data.get("branch_id"),
+        name=data["product_name"],
+        quantity=data["quantity"],
+        price=data["price"]
     )
-    inventory.append(item.to_dict())
-    write_data(FILE, inventory)
+    db.session.add(item)
+    db.session.commit()
     return item.to_dict()
 
+
 def delete_inventory(inventory_id):
-    inventory = read_data(FILE)
-    inventory = [item for item in inventory if item["id"] != inventory_id]
-    write_data(FILE, inventory)
+    item = Inventory.query.get(inventory_id)
+    if item:
+        db.session.delete(item)
+        db.session.commit()

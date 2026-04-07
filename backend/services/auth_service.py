@@ -1,19 +1,15 @@
-from storage.json_storage import read_data, write_data
+from database import db
 from models.user import User
 
-FILE = "user.json"
-
 def get_all_users():
-    return read_data(FILE)
+    users = User.query.all()
+    return [user.to_dict() for user in users]
 
 def add_user(data):
-    users = read_data(FILE)
-    new_id = len(users) + 1
     user = User(
-        data["username"],
-        data["password"],
-        data["confirmPassword"]
+        username=data["username"],
+        password=data["password"]
     )
-    users.append(user.to_dict())
-    write_data(FILE, users)
+    db.session.add(user)
+    db.session.commit()
     return user.to_dict()

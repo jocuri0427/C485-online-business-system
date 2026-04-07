@@ -1,28 +1,26 @@
-from storage.json_storage import read_data, write_data
+from database import db
 from models.branch import Branch
 
-FILE = "branch.json"
-
 def get_all_branches():
-    return read_data(FILE)
+    branches = Branch.query.all()
+    return [branch.to_dict() for branch in branches]
 
 def add_branch(data):
-    branches = read_data(FILE)
-    new_id = len(branches) + 1
     branch = Branch(
-        new_id,
-        data["branch_street"],
-        data["branch_city"],
-        data["branch_zipcode"],
-        data["branch_state"],
-        data["revenue"],
-        data["number_of_employees"]
+        branch_id=data.get("id"),
+        branch_street=data["branch_street"],
+        branch_city=data["branch_city"],
+        branch_zipcode=data["branch_zipcode"],
+        branch_state=data["branch_state"],
+        revenue=data["revenue"],
+        number_of_employees=data["number_of_employees"]
     )
-    branches.append(branch.to_dict())
-    write_data(FILE, branches)
+    db.session.add(branch)
+    db.session.commit()
     return branch.to_dict()
 
 def delete_branch(branch_id):
-    branches = read_data(FILE)
-    branches = [branch for branch in branches if branch["id"] != branch_id]
-    write_data(FILE, branches)
+    branch = Branch.query.get(branch_id)
+    if branch:
+        db.session.delete(branch)
+        db.session.commit()
