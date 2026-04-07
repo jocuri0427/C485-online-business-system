@@ -26,6 +26,8 @@ function Branches() {
       navigate("/branches")
     }
     const handleLogout = () => {
+      localStorage.removeItem("role")
+      localStorage.removeItem("username")
       navigate("/")
     }
     const goToDashboard = () => {

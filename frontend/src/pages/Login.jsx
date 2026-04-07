@@ -32,7 +32,14 @@ function Login() {
 
     if (user) {
       console.log("Login successful:", user)
-      navigate("/dashboard")
+      localStorage.setItem("role", user.role)
+      localStorage.setItem("username", user.username)
+      
+      if (user.role === "admin") {
+        navigate("/dashboard")
+      } else {
+        navigate("/employee-dashboard")
+      }
     } else {
       alert(
         "Error: Username or password is incorrect or does not exist. Please try again or sign up."
@@ -51,7 +58,8 @@ function Login() {
     const [signupForm, setSignupForm] = useState({
         username: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        role: "user"
     })
     const handleSignupChange = (e) => {
     setSignupForm({ ...signupForm, [e.target.name]: e.target.value })
@@ -71,7 +79,8 @@ function Login() {
     await api.post("/users", {
         username: signupForm.username,
         password: signupForm.password,
-        confirmPassword: signupForm.confirmPassword
+        confirmPassword: signupForm.confirmPassword,
+        role: signupForm.role
     })
 
     setShowSignup(false)
@@ -179,6 +188,16 @@ function Login() {
             className="w-full mb-6 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
+
+          <select
+            name="role"
+            value={signupForm.role}
+            onChange={handleSignupChange}
+            className="w-full mb-6 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+          >
+            <option value="user">User (Employee)</option>
+            <option value="admin">Admin</option>
+          </select>
 
         <button
           type="submit"

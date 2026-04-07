@@ -8,7 +8,8 @@ def get_all_users():
 def add_user(data):
     user = User(
         username=data["username"],
-        password=data["password"]
+        password=data["password"],
+        role=data.get("role", "user")
     )
     db.session.add(user)
     db.session.commit()

@@ -30,17 +30,17 @@ with app.app_context():
     import models.employee
     import models.inventory
     import models.user
-    
+
     db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)
 
 
-##from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 
-##app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:admin@localhost/business_system'
-##app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:admin@localhost/business_system'
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-##db = SQLAlchemy(app)    
-## name of application : Businexus
+# db = SQLAlchemy(app)
+# name of application : Businexus
