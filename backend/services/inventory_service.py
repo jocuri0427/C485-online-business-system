@@ -1,29 +1,26 @@
-from database import db
-from models.inventory import InventoryItem
+from storage.json_storage import read_data, write_data
+from models.inventory import Inventory
+
+FILE = "inventory.json"
 
 def get_all_inventory():
-    items = InventoryItem.query.all()
-    return [item.to_dict() for item in items]
-
-def get_inventory_by_branch(branch_id):
-    items = InventoryItem.query.filter_by(branch_id=branch_id).all()
-    return [item.to_dict() for item in items]
+    return read_data(FILE)
 
 def add_inventory(data):
-    new_item = InventoryItem(
-        branch_id=data.get('branch_id'),
-        name=data.get('name') or data.get('product_name'),
-        price=data.get('price'),
-        quantity=data.get('quantity', 0)
+    inventory = read_data(FILE)
+    new_id = len(inventory) + 1
+    item = Inventory(
+        new_id,
+        data["branch_id"],
+        data["product_name"],
+        data["quantity"],
+        data["price"]
     )
-    db.session.add(new_item)
-    db.session.commit()
-    return new_item.to_dict()
-
-def update_stock(item_id, quantity):
-    item = InventoryItem.query.get(item_id)
-    if not item:
-        return None
-    item.quantity = quantity
-    db.session.commit()
+    inventory.append(item.to_dict())
+    write_data(FILE, inventory)
     return item.to_dict()
+
+def delete_inventory(inventory_id):
+    inventory = read_data(FILE)
+    inventory = [item for item in inventory if item["id"] != inventory_id]
+    write_data(FILE, inventory)

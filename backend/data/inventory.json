@@ -1,0 +1,135 @@
+[
+    {
+        "id": 1,
+        "branch_id": 1,
+        "product_name": "Laptop",
+        "quantity": 10,
+        "price": 1000
+    },
+    {
+        "id": 2,
+        "branch_id": 1,
+        "product_name": "Smartphone",
+        "quantity": 20,
+        "price": 500
+    },
+    {
+        "id": 3,
+        "branch_id": 2,
+        "product_name": "Headphones",
+        "quantity": 15,
+        "price": 150
+    },
+    {
+        "id": 4,
+        "branch_id": 2,
+        "product_name": "Monitor",
+        "quantity": 5,
+        "price": 300
+    },
+    {
+        "id": 5,
+        "branch_id": 3,
+        "product_name": "Keyboard",
+        "quantity": 25,
+        "price": 50
+    },
+    {
+        "id": 6,
+        "branch_id": 3,
+        "product_name": "Mouse",
+        "quantity": 30,
+        "price": 25
+    },
+    {
+        "id": 7,
+        "branch_id": 4,
+        "product_name": "Printer",
+        "quantity": 8,
+        "price": 200
+    },
+    {
+        "id": 8,
+        "branch_id": 4,
+        "product_name": "Scanner",
+        "quantity": 12,
+        "price": 180
+    },
+    {
+        "id": 9,
+        "branch_id": 5,
+        "product_name": "External Hard Drive",
+        "quantity": 20,
+        "price": 120
+    },
+    {
+        "id": 10,
+        "branch_id": 5,
+        "product_name": "USB Flash Drive",
+        "quantity": 50,
+        "price": 20
+    },
+    {
+        "id": 11,
+        "branch_id": 1,
+        "product_name": "Tablet",
+        "quantity": 15,
+        "price": 300
+    },
+    {
+        "id": 12,
+        "branch_id": 2,
+        "product_name": "Smartwatch",
+        "quantity": 10,
+        "price": 200
+    },
+    {
+        "id": 13,
+        "branch_id": 3,
+        "product_name": "Gaming Console",
+        "quantity": 5,
+        "price": 400
+    },
+    {
+        "id": 14,
+        "branch_id": 4,
+        "product_name": "Webcam",
+        "quantity": 20,
+        "price": 80
+    },
+    {
+        "id": 15,
+        "branch_id": 5,
+        "product_name": "Microphone",
+        "quantity": 25,
+        "price": 60
+    },
+    {
+        "id": 16,
+        "branch_id": 1,
+        "product_name": "Graphics Card",
+        "quantity": 7,
+        "price": 500
+    },
+    {
+        "id": 17,
+        "branch_id": 2,
+        "product_name": "RAM",
+        "quantity": 30,
+        "price": 80
+    },
+    {
+        "id": 18,
+        "branch_id": 3,
+        "product_name": "Power Supply",
+        "quantity": 10,
+        "price": 150
+    },
+    {
+        "id": 19,
+        "branch_id": 4,
+        "product_name": "CPU Cooler",
+        "quantity": 15,
+        "price": 70
+    }
+]

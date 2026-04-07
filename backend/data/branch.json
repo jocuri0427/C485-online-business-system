@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "branch_street": "1443 Main St",
+        "branch_city": "Los Angeles",
+        "branch_zipcode": "94113",
+        "branch_state": "CA",
+        "revenue": 1000000,
+        "number_of_employees": 50
+    },
+    {
+        "id": 2,
+        "branch_street": "4564 Elm St",
+        "branch_city": "Rochester",
+        "branch_zipcode": "61830",
+        "branch_state": "NY",
+        "revenue": 2000000,
+        "number_of_employees": 100
+    },
+    {
+        "id": 3,
+        "branch_street": "789 Oak St",
+        "branch_city": "Houston",
+        "branch_zipcode": "54129",
+        "branch_state": "TX",
+        "revenue": 1500000,
+        "number_of_employees": 75
+    },
+    {
+        "id": 4,
+        "branch_street": "321 Pine St",
+        "branch_city": "Miami",
+        "branch_zipcode": "98765",
+        "branch_state": "FL",
+        "revenue": 2500000,
+        "number_of_employees": 120
+    },
+    {
+        "id": 5,
+        "branch_street": "654 Maple St",
+        "branch_city": "Chicago",
+        "branch_zipcode": "60601",
+        "branch_state": "IL",
+        "revenue": 1800000,
+        "number_of_employees": 90
+    },
+    {
+        "id": 6,
+        "branch_street": "987 Cedar St",
+        "branch_city": "Seattle",
+        "branch_zipcode": "98101",
+        "branch_state": "WA",
+        "revenue": 2200000,
+        "number_of_employees": 110
+    },
+    {
+        "id": 7,
+        "branch_street": "246 Birch St",
+        "branch_city": "Denver",
+        "branch_zipcode": "80201",
+        "branch_state": "CO",
+        "revenue": 1600000,
+        "number_of_employees": 80
+    },
+    {
+        "id": 8,
+        "branch_street": "135 Spruce St",
+        "branch_city": "Atlanta",
+        "branch_zipcode": "30301",
+        "branch_state": "GA",
+        "revenue": 1900000,
+        "number_of_employees": 95
+    },
+    {
+        "id": 9,
+        "branch_street": "864 Willow St",
+        "branch_city": "Boston",
+        "branch_zipcode": "02101",
+        "branch_state": "MA",
+        "revenue": 2100000,
+        "number_of_employees": 105
+    },
+    {
+        "id": 10,
+        "branch_street": "753 Aspen St",
+        "branch_city": "San Francisco",
+        "branch_zipcode": "94102",
+        "branch_state": "CA",
+        "revenue": 3000000,
+        "number_of_employees": 150
+    },
+    {
+        "id": 11,
+        "branch_street": "159 Walnut St",
+        "branch_city": "Portland",
+        "branch_zipcode": "97201",
+        "branch_state": "OR",
+        "revenue": 1700000,
+        "number_of_employees": 85
+    },
+    {
+        "id": 12,
+        "branch_street": "9193 Arpen Blvd",
+        "branch_city": "Sunnyvale",
+        "branch_zipcode": "96011",
+        "branch_state": "CA",
+        "revenue": "1780000",
+        "number_of_employees": "93"
+    }
+]
